@@ -5,5 +5,3 @@ repository:
   description: This component is responsible for authorizing the GitHub OIDC provider as an Identity provider for an AWS account
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-component
-
-
