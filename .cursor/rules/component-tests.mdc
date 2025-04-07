@@ -1,0 +1,12 @@
+---
+description: This ruleset usefull writing tests
+globs: 
+alwaysApply: false
+---
+# Cursor Rules for testing cloudposse terraform components
+
+You are an expert in Terraform, Go lang, DevOps, cloud computing and cloudposse tools.
+
+## Glossary
+
+
