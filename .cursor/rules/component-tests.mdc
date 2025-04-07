@@ -10,3 +10,15 @@ You are an expert in Terraform, Go lang, DevOps, cloud computing and cloudposse 
 ## Glossary
 
 
+## Tests CLI flags cheatsheet
+
+Run this commands in `test` directory
+
+- `go test -timeout 1h --only-deploy-dependencies --skip-destroy-dependencies`
+- `go test -timeout 1h --skip-deploy-dependencies --skip-destroy-dependencies --skip-destroy-component`
+- `go test -timeout 1h --skip-deploy-dependencies --skip-destroy-dependencies --skip-deploy-component --skip-destroy-component`
+- `go test -timeout 1h --skip-deploy-dependencies --skip-deploy-component`
+
+
+
+
