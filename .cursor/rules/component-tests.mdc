@@ -9,6 +9,22 @@ You are an expert in Terraform, Go lang, DevOps, cloud computing and cloudposse 
 
 ## Glossary
 
+### Use cases 
+- a YAML-based atmos stack configuration files 
+- stored in `tests/fixtures/stacks/catalog/usecase` directory 
+- Represents different combinations of a component's variables. 
+- By default, there are two use cases 
+    - `basic` - common component usage
+    - `disabled` - disabled mode where `enabled: false` variable is defined
+
+### Use case 
+- a YAML-based atmos stack configuration file
+- contains only one use case component definition
+- use case component name defined as {component name}/{use case name}
+- by default `metadata.component` points to `target` 
+- for grouped decoupled components (example: prefixed with `eks`, `tgw`) `metadata.component` points to `{group}/{component name}`
+
+
 
 ## Tests CLI flags cheatsheet
 
