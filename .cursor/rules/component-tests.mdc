@@ -11,7 +11,7 @@ You are an expert in Terraform, Go lang, DevOps, cloud computing and cloudposse 
 
 ### Use cases 
 - a YAML-based atmos stack configuration files 
-- stored in `tests/fixtures/stacks/catalog/usecase` directory 
+- stored in `test/fixtures/stacks/catalog/usecase` directory 
 - Represents different combinations of a component's variables. 
 - By default, there are two use cases 
     - `basic` - common component usage
@@ -35,6 +35,11 @@ Run this commands in `test` directory
 - `go test -timeout 1h --skip-deploy-dependencies --skip-destroy-dependencies --skip-deploy-component --skip-destroy-component`
 - `go test -timeout 1h --skip-deploy-dependencies --skip-deploy-component`
 
+
+## Operations 
+
+### Use case update
+- Replace existing component stack configuration with configuration for the current component
 
 
 
