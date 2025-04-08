@@ -1,0 +1,9 @@
+components:
+  terraform:
+    github-oidc-provider/basic:
+      metadata:
+        component: target
+      vars:
+        enabled: true
+        name: github-oidc
+        # Using default thumbprint list
