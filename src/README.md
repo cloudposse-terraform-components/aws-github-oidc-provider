@@ -8,9 +8,8 @@ tags:
 
 # Component: `github-oidc-provider`
 
-This component is responsible for authorizing the GitHub OIDC provider as an Identity provider for an AWS account. It is
-meant to be used in concert with `aws-teams` and `aws-team-roles` and/or with `github-actions-iam-role.mixin.tf`
-
+This component authorizes the GitHub OIDC provider as an identity provider for an AWS account. It is intended to be used with
+`aws-teams`, `aws-team-roles`, and/or `github-actions-iam-role.mixin.tf`.
 ## Usage
 
 **Stack Level**: Global
@@ -18,8 +17,7 @@ meant to be used in concert with `aws-teams` and `aws-team-roles` and/or with `g
 Here's an example snippet for how to use this component.
 
 - This must be installed in the `identity` account in order to use standard SAML roles with role chaining.
-- This must be installed in each individual account where you want to provision a service role for a GitHub action that
-  will be assumed directly by the action.
+- This must be installed in each individual account where you want to provision a service role for a GitHub action that will be assumed directly by the action.
 
 For security, since this component adds an identity provider, only SuperAdmin can install it.
 
@@ -31,18 +29,13 @@ components:
         enabled: true
 ```
 
-## Configuring the Github OIDC Provider
+## Configuring the GitHub OIDC Provider
 
-This component was created to add the Github OIDC provider so that Github Actions can safely assume roles without the
-need to store static credentials in the environment. The details of the GitHub OIDC provider are hard coded in the
-component, however at some point the provider's thumbprint may change, at which point you can use
+This component was created to add the GitHub OIDC provider so that GitHub Actions can safely assume roles without the need to store static credentials in the environment. The details of the GitHub OIDC provider are hard coded in the component, however at some point the provider's thumbprint may change, at which point you can use
 [get_github_oidc_thumbprint.sh](https://github.com/cloudposse/terraform-aws-components/blob/main/modules/github-oidc-provider/scripts/get_github_oidc_thumbprint.sh)
 to get the new thumbprint and add it to the list in `var.thumbprint_list`.
 
-This script will pull one of two thumbprints. There are two possible intermediary certificates for the Actions SSL
-certificate and either can be returned by the GitHub servers, requiring customers to trust both. This is a known
-behavior when the intermediary certificates are cross-signed by the CA. Therefore, run this script until both values are
-retrieved. Add both to `var.thumbprint_list`.
+This script will pull one of two thumbprints. There are two possible intermediary certificates for the Actions SSL certificate and either can be returned by the GitHub servers, requiring customers to trust both. This is a known behavior when the intermediary certificates are cross-signed by the CA. Therefore, run this script until both values are retrieved. Add both to `var.thumbprint_list`.
 
 For more, see https://github.blog/changelog/2023-06-27-github-actions-update-on-oidc-integration-with-aws/
 
@@ -66,7 +59,10 @@ permissions:
 ```
 
 <!-- prettier-ignore-start -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- prettier-ignore-end -->
+
+
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -124,12 +120,17 @@ permissions:
 | Name | Description |
 |------|-------------|
 | <a name="output_oidc_provider_arn"></a> [oidc\_provider\_arn](#output\_oidc\_provider\_arn) | GitHub OIDC provider ARN |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- prettier-ignore-end -->
+<!-- markdownlint-restore -->
+
+
 
 ## References
 
-- [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/github-oidc-provider) -
-  Cloud Posse's upstream component
+
+- [cloudposse-terraform-components](https://github.com/orgs/cloudposse-terraform-components/repositories) - Cloud Posse's upstream component
+
+
+
 
 [<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-github-oidc-provider&utm_content=)
+
